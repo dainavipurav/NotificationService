@@ -11,9 +11,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class StudentEnrollmentDetailsDto {
+public class StudentEnrollmentNotificationDto {
+    private String toEmail;
+    private String emailTemplate;
     private String studentName;
     private String courseName;
-    private LocalDate registrationDate;
+    private LocalDate enrollmentDate;
     private String studentStatus;
 }

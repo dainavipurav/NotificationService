@@ -1,4 +1,4 @@
-package com.learning.springboot.emailservice.dto;
+package com.learning.springboot.notificationservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
