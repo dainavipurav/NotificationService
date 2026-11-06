@@ -18,4 +18,5 @@ public class StudentEnrollmentNotificationDto {
     private String courseName;
     private LocalDate enrollmentDate;
     private String studentStatus;
+    private String invoiceDownloadPath;
 }

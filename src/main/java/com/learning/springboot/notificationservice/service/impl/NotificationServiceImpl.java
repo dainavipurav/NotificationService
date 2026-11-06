@@ -29,8 +29,9 @@ public class NotificationServiceImpl implements NotificationService {
                 .body(Map.of(
                         "studentName", request.getStudentName(),
                         "courseName", request.getCourseName(),
-                        "registrationDate", request.getEnrollmentDate(),
-                        "studentStatus", request.getStudentStatus()
+                        "enrollmentDate", request.getEnrollmentDate(),
+                        "studentStatus", request.getStudentStatus(),
+                        "invoiceDownloadPath", request.getInvoiceDownloadPath()
                 ))
                 .retrieve()
                 .body(SuccessResponseDto.class);
