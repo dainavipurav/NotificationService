@@ -4,3 +4,19 @@ server:
 spring:
   application:
     name: NotificationService
+
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: auto
+        retry:
+          enabled: true
+          initial-interval: 2000
+          multiplier: 1.0
+          max-retries: 4
+        default-requeue-rejected: false
