@@ -1,6 +1,6 @@
 package com.learning.springboot.notificationservice.service.impl;
 
-import com.learning.springboot.notificationservice.dto.StudentEnrollmentNotificationDto;
+import com.learning.springboot.notificationservice.dto.InvoiceRequestDto;
 import com.learning.springboot.notificationservice.dto.SuccessResponseDto;
 import com.learning.springboot.notificationservice.service.NotificationService;
 import lombok.RequiredArgsConstructor;
@@ -17,14 +17,14 @@ public class NotificationServiceImpl implements NotificationService {
     private final RestClient restClient;
 
     @Override
-    public SuccessResponseDto sendEmailNotification(StudentEnrollmentNotificationDto request) {
+    public SuccessResponseDto sendEmailNotification(InvoiceRequestDto request) {
 
         Map<String, Object> variables = new HashMap<>();
 
         variables.put("studentName", request.getStudentName());
         variables.put("courseName", request.getCourseName());
         variables.put("enrollmentDate", request.getEnrollmentDate());
-        variables.put("studentStatus", request.getStudentStatus());
+        variables.put("studentStatus", request.getEnrollmentStatus());
         variables.put("invoiceDownloadPath", request.getInvoiceDownloadPath());
 
         return restClient.post()
